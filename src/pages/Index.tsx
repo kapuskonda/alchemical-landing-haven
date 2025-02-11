@@ -1,5 +1,5 @@
 
-import { ChevronsDown, Code, Flask, Sparkles, Workflow } from "lucide-react";
+import { ChevronsDown, Code, FlaskConical, Sparkles, Workflow } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Index = () => {
@@ -30,7 +30,7 @@ const Index = () => {
                     <path d="M102.843 17.1573L17.1573 102.843" stroke="currentColor" strokeWidth="2"/>
                   </svg>
                 </div>
-                <Flask className="w-12 h-12 text-alchemy-orange animate-float" />
+                <FlaskConical className="w-12 h-12 text-alchemy-orange animate-float" />
               </div>
             </div>
             
