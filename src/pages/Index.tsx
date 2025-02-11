@@ -1,13 +1,18 @@
+
 import { ChevronsDown, Code, FlaskConical, Sparkles, Workflow } from "lucide-react";
 import { motion } from "framer-motion";
 import { Process } from "@/components/Process";
 import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-slate-900 text-gray-100">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,#1a1f35_0%,rgba(26,31,53,0.5)_25%,rgba(26,31,53,0)_50%)] pointer-events-none" />
+      
+      {/* Header */}
+      <Header />
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
