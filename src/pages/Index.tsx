@@ -4,22 +4,42 @@ import { motion } from "framer-motion";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-slate-900 text-gray-100">
+      {/* Background gradient inspired by the new design */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,#1a1f35_0%,rgba(26,31,53,0.5)_25%,rgba(26,31,53,0)_50%)] pointer-events-none" />
+      
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
-        {/* Dynamic background gradients inspired by Ignyt Labs */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,93,15,0.15)_0%,transparent_70%)] animate-pulse" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,181,99,0.1)_0%,transparent_60%)] animate-pulse delay-75" />
-          <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(180deg,rgba(10,9,8,0.8)_0%,rgba(10,9,8,0.2)_100%)]" />
+        {/* Floating symbols background */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <motion.div
+            animate={{
+              rotate: 360,
+              y: [0, -20, 0],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            className="absolute top-1/4 left-1/4"
+          >
+            <div className="w-32 h-32 opacity-10">
+              <svg viewBox="0 0 120 120" fill="none" className="w-full h-full">
+                <circle cx="60" cy="60" r="59" stroke="currentColor" strokeWidth="2"/>
+                <path d="M60 1L60 119" stroke="currentColor" strokeWidth="2"/>
+                <path d="M1 60L119 60" stroke="currentColor" strokeWidth="2"/>
+              </svg>
+            </div>
+          </motion.div>
         </div>
         
-        <div className="container relative z-10 text-center">
+        <div className="container max-w-7xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-8"
+            className="text-center space-y-8"
           >
             <div className="inline-block mb-6">
               <motion.div 
@@ -27,44 +47,35 @@ const Index = () => {
                 whileHover={{ scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <div className="absolute inset-0 animate-rotate opacity-20">
-                  <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-                    <circle cx="60" cy="60" r="59" stroke="currentColor" strokeWidth="2"/>
-                    <path d="M60 1L60 119" stroke="currentColor" strokeWidth="2"/>
-                    <path d="M1 60L119 60" stroke="currentColor" strokeWidth="2"/>
-                    <path d="M17.1573 17.1573L102.843 102.843" stroke="currentColor" strokeWidth="2"/>
-                    <path d="M102.843 17.1573L17.1573 102.843" stroke="currentColor" strokeWidth="2"/>
-                  </svg>
-                </div>
-                <FlaskConical className="w-12 h-12 text-alchemy-orange animate-float" />
+                <FlaskConical className="w-16 h-16 text-amber-500" />
               </motion.div>
             </div>
             
             <motion.h1 
-              className="text-5xl md:text-7xl font-bold tracking-tight"
+              className="text-5xl md:text-7xl font-bold tracking-tight mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              Digital Alchemy for
+              Transform Your Vision Into
               <motion.span 
-                className="block mt-2 bg-gradient-to-r from-alchemy-orange to-alchemy-light-orange bg-clip-text text-transparent"
+                className="block mt-2 bg-gradient-to-r from-amber-500 to-red-600 bg-clip-text text-transparent"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
               >
-                Modern Solutions
+                Digital Reality
               </motion.span>
             </motion.h1>
             
             <motion.p 
-              className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto"
+              className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
             >
-              Transforming ideas into digital gold through the perfect blend of design,
-              technology, and innovation.
+              Modern software alchemy: Turning ideas into gold through expert development
+              and technical innovation.
             </motion.p>
             
             <motion.div 
@@ -74,12 +85,11 @@ const Index = () => {
               transition={{ delay: 0.8 }}
             >
               <motion.button 
-                className="group relative alchemy-card hover:scale-105 hover:bg-alchemy-orange/10 px-8 py-4 overflow-hidden"
+                className="px-8 py-4 bg-gradient-to-r from-amber-500 to-red-600 rounded-lg text-white font-semibold shadow-lg hover:shadow-amber-500/20"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className="relative z-10">Start Transmutation</span>
-                <div className="absolute inset-0 -z-10 bg-gradient-to-r from-alchemy-orange/20 to-alchemy-light-orange/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                Start Your Journey
               </motion.button>
             </motion.div>
           </motion.div>
@@ -89,15 +99,15 @@ const Index = () => {
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
-            <ChevronsDown className="w-6 h-6 text-alchemy-orange" />
+            <ChevronsDown className="w-6 h-6 text-amber-500" />
           </motion.div>
         </div>
       </section>
 
-      {/* Services Section - Inspired by Arounda's card design */}
+      {/* Services Section */}
       <section className="py-20 px-4 relative">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,93,15,0.1)_0%,transparent_70%)]" />
-        <div className="container relative">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(251,146,60,0.1)_0%,transparent_70%)]" />
+        <div className="container max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -105,8 +115,8 @@ const Index = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Our Transmutations</h2>
-            <p className="text-gray-400 text-lg">Converting challenges into opportunities</p>
+            <h2 className="text-4xl font-bold mb-4">Our Services</h2>
+            <p className="text-gray-400 text-lg">The elements of digital transformation</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -117,7 +127,7 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="alchemy-card group hover:scale-105 hover:bg-alchemy-orange/5"
+                className="p-6 rounded-lg bg-slate-800/50 backdrop-blur-sm border border-slate-700 group hover:bg-slate-800/70 transition-all duration-300"
               >
                 <div className="relative mb-6">
                   <motion.div
@@ -125,9 +135,9 @@ const Index = () => {
                     transition={{ duration: 0.8 }}
                     className="relative z-10"
                   >
-                    <service.icon className="w-12 h-12 text-alchemy-orange" />
+                    <service.icon className="w-12 h-12 text-amber-500" />
                   </motion.div>
-                  <div className="absolute inset-0 bg-alchemy-orange/10 rounded-full filter blur-xl group-hover:blur-2xl transition-all duration-300" />
+                  <div className="absolute inset-0 bg-amber-500/10 rounded-full filter blur-xl group-hover:blur-2xl transition-all duration-300" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
                 <p className="text-gray-400 leading-relaxed">{service.description}</p>
@@ -137,19 +147,19 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Section - Inspired by Ignyt Labs' form design */}
+      {/* Contact Section */}
       <section className="py-20 px-4 relative">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(255,93,15,0.1)_0%,transparent_70%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(251,146,60,0.1)_0%,transparent_70%)]" />
         
-        <div className="container relative">
+        <div className="container max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="alchemy-card max-w-2xl mx-auto"
+            className="max-w-2xl mx-auto p-8 rounded-lg bg-slate-800/50 backdrop-blur-sm border border-slate-700"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Begin Your Transformation</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Begin Your Journey</h2>
             
             <form className="space-y-6">
               <div className="space-y-4">
@@ -157,33 +167,32 @@ const Index = () => {
                   <input
                     type="text"
                     placeholder="Your Name"
-                    className="w-full bg-black/20 border border-alchemy-orange/20 rounded-lg px-4 py-3 focus:outline-none focus:border-alchemy-orange/40 transition-colors"
+                    className="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-amber-500/40 transition-colors"
                   />
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                   <input
                     type="email"
                     placeholder="Your Email"
-                    className="w-full bg-black/20 border border-alchemy-orange/20 rounded-lg px-4 py-3 focus:outline-none focus:border-alchemy-orange/40 transition-colors"
+                    className="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-amber-500/40 transition-colors"
                   />
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                   <textarea
                     placeholder="Your Message"
                     rows={4}
-                    className="w-full bg-black/20 border border-alchemy-orange/20 rounded-lg px-4 py-3 focus:outline-none focus:border-alchemy-orange/40 transition-colors"
+                    className="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-amber-500/40 transition-colors"
                   />
                 </motion.div>
               </div>
               
               <motion.button
                 type="submit"
-                className="w-full bg-alchemy-orange/10 hover:bg-alchemy-orange/20 border border-alchemy-orange/20 rounded-lg px-6 py-3 font-medium transition-colors relative group overflow-hidden"
+                className="w-full px-8 py-4 bg-gradient-to-r from-amber-500 to-red-600 rounded-lg text-white font-semibold shadow-lg hover:shadow-amber-500/20"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <span className="relative z-10">Send Message</span>
-                <div className="absolute inset-0 -z-10 bg-gradient-to-r from-alchemy-orange/20 to-alchemy-light-orange/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </motion.button>
             </form>
           </motion.div>
