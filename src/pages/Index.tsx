@@ -1,16 +1,16 @@
-
 import { ChevronsDown, Code, FlaskConical, Sparkles, Workflow } from "lucide-react";
 import { motion } from "framer-motion";
+import { Process } from "@/components/Process";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-slate-900 text-gray-100">
-      {/* Background gradient inspired by the new design */}
+      {/* Background gradient */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,#1a1f35_0%,rgba(26,31,53,0.5)_25%,rgba(26,31,53,0)_50%)] pointer-events-none" />
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
-        {/* Floating symbols background */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
             animate={{
@@ -147,6 +147,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Process Section */}
+      <Process />
+
       {/* Contact Section */}
       <section className="py-20 px-4 relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(251,146,60,0.1)_0%,transparent_70%)]" />
@@ -198,6 +201,9 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
