@@ -6,17 +6,17 @@ export const Header = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed w-full z-50 bg-slate-900/80 backdrop-blur-sm border-b border-slate-800/50"
+      className="fixed w-full z-50 bg-ivory-50/80 backdrop-blur-sm border-b border-ivory-200"
     >
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <svg className="w-8 h-8" viewBox="0 0 100 100">
+            <svg className="w-8 h-8 text-primary-600" viewBox="0 0 100 100">
               <circle cx="50" cy="50" r="45" stroke="currentColor" fill="none" strokeWidth="2" />
               <path d="M50 20 L80 70 L20 70 Z" stroke="currentColor" fill="none" strokeWidth="2" />
             </svg>
-            <span className="text-xl font-semibold tracking-wider">KEEMIA</span>
+            <span className="text-xl font-mono font-semibold tracking-wider text-gray-900">KEEMIA</span>
           </div>
           
           {/* Navigation */}
@@ -25,7 +25,7 @@ export const Header = () => {
               <li>
                 <a 
                   href="#services" 
-                  className="text-gray-300 hover:text-white hover:text-amber-500 transition-colors duration-200"
+                  className="font-mono text-gray-600 hover:text-primary-600 transition-colors duration-200"
                 >
                   Services
                 </a>
@@ -33,7 +33,7 @@ export const Header = () => {
               <li>
                 <a 
                   href="#process" 
-                  className="text-gray-300 hover:text-white hover:text-amber-500 transition-colors duration-200"
+                  className="font-mono text-gray-600 hover:text-primary-600 transition-colors duration-200"
                 >
                   Process
                 </a>
@@ -41,7 +41,7 @@ export const Header = () => {
               <li>
                 <a 
                   href="#contact" 
-                  className="text-gray-300 hover:text-white hover:text-amber-500 transition-colors duration-200"
+                  className="font-mono text-gray-600 hover:text-primary-600 transition-colors duration-200"
                 >
                   Contact
                 </a>
